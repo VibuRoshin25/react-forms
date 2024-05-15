@@ -1,6 +1,6 @@
 import Input from "./Input";
 import { isEmail, isNotEmpty, hasMinLength } from "../util/validation";
-import { useInput } from "../hooks/useInput";
+import { useInput } from "../hooks/useInput.js";
 
 export default function Login() {
   const {
@@ -19,6 +19,10 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (emailHasError || passwordHasError) {
+      return;
+    }
   }
 
   return (
