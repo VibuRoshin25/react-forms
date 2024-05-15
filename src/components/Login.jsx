@@ -15,6 +15,7 @@ export default function Login() {
 
     if (!emailIsValid) {
       setEmailIsInvalid(true);
+      return;
     }
   }
 
@@ -26,6 +27,9 @@ export default function Login() {
         <div className="control no-margin">
           <label htmlFor="email">Email</label>
           <input id="email" type="email" name="email" ref={email} />
+          <div className="conrol-error">
+            {emailIsInvalid && <p>Please enter a valid email address.</p>}
+          </div>
         </div>
 
         <div className="control no-margin">
